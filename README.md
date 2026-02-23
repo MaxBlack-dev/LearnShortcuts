@@ -1,8 +1,8 @@
-# ShortcutSensei
+# LearnShortcuts
 
 > *Sensei* (先生) — a teacher, a master of their craft.
 
-**ShortcutSensei** is a free IntelliJ IDEA plugin that teaches you every keyboard shortcut
+**LearnShortcuts** is a free IntelliJ IDEA plugin that teaches you every keyboard shortcut
 through interactive, context-aware practice sessions. Instead of reading a cheat sheet,
 you *do* the shortcuts — in a safe practice environment where you can see exactly what
 each one does.
@@ -11,7 +11,7 @@ each one does.
 
 ## How it works
 
-1. Open the **ShortcutSensei** tool window (right sidebar, or Tools → Open ShortcutSensei).
+1. Open the **LearnShortcuts** tool window (right sidebar, or Tools → Open LearnShortcuts).
 2. Press **▶ Start Session**.
 3. The plugin shows you an action name (e.g. *"Duplicate Line or Selection"*).
 4. Press the correct shortcut on your keyboard.
@@ -36,7 +36,7 @@ each one does.
 ## Architecture
 
 ```
-shortcutsensei/
+learnshortcuts/
 ├── core/
 │   ├── model/          # Shortcut, ShortcutGroup, Session, Statistics
 │   ├── engine/         # SessionManager, ShortcutVerifier, SessionManagerService
@@ -82,7 +82,7 @@ shortcutsensei/
 ## Building
 
 ```bash
-./gradlew buildPlugin          # produces build/distributions/ShortcutSensei-*.zip
+./gradlew buildPlugin          # produces build/distributions/LearnShortcuts-*.zip
 ./gradlew runIde               # launches a sandbox IDE with the plugin installed
 ./gradlew test                 # runs unit tests
 ./gradlew verifyPlugin         # validates plugin.xml and compatibility

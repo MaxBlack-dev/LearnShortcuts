@@ -1,4 +1,4 @@
-# ShortcutSensei — Project Requirements
+# LearnShortcuts — Project Requirements
 
 > This document captures the original product requirements as stated on **22 February 2026**,
 > the first day of the project. It is preserved here so we can always trace back to the
@@ -8,7 +8,7 @@
 
 ## 1. Overview
 
-**ShortcutSensei** is a free IntelliJ IDEA plugin that teaches users all IntelliJ IDEA
+**LearnShortcuts** is a free IntelliJ IDEA plugin that teaches users all IntelliJ IDEA
 keyboard shortcuts through interactive, context-aware practice sessions.
 
 ---
@@ -111,7 +111,7 @@ Some shortcuts fundamentally cannot be demonstrated interactively:
 
 | Shortcut | Reason |
 |---|---|
-| Toggle Full Screen | Hides the ShortcutSensei panel |
+| Toggle Full Screen | Hides the LearnShortcuts panel |
 | Distraction Free Mode | Hides all UI including the practice window |
 | Presentation Mode | Changes UI in a way that breaks the session |
 | Exit (Close IDE) | Terminates the IDE and the practice session |
@@ -146,7 +146,7 @@ The Statistics panel must show:
 
 ## 10. Settings
 
-The Settings panel (under Settings → Tools → ShortcutSensei) must expose:
+The Settings panel (under Settings → Tools → LearnShortcuts) must expose:
 
 | Setting | Options / Default |
 |---|---|
@@ -171,7 +171,7 @@ The Settings panel (under Settings → Tools → ShortcutSensei) must expose:
 | Memory | Must not hold large data structures in memory between sessions |
 | Compatibility | Must work from IntelliJ IDEA 2023.3 (build 233) onwards |
 | Signing | Plugin must be signed with JetBrains-approved certificate before publishing |
-| Open source | Repository hosted on GitHub (MaxBlack-dev / ShortcutSensei) |
+| Open source | Repository hosted on GitHub (MaxBlack-dev / LearnShortcuts) |
 
 ---
 
@@ -190,4 +190,4 @@ The following were raised as ideas and are not blocking for v1.0:
 ---
 
 *Document created: 22 February 2026*
-*Author: Max (ShortcutSensei project founder) + GitHub Copilot*
+*Author: Max (LearnShortcuts project founder) + GitHub Copilot*

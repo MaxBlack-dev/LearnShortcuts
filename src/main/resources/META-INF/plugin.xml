@@ -1,10 +1,10 @@
 <idea-plugin>
-    <id>dev.maxblack.shortcut-sensei</id>
-    <name>ShortcutSensei</name>
+    <id>dev.maxblack.learn-shortcuts</id>
+    <name>LearnShortcuts</name>
     <vendor url="https://github.com/MaxBlack-dev">MaxBlack</vendor>
 
     <description><![CDATA[
-        <b>ShortcutSensei</b> — Master every IntelliJ IDEA keyboard shortcut through
+        <b>LearnShortcuts</b> — Master every IntelliJ IDEA keyboard shortcut through
         interactive, context-aware practice sessions.<br/><br/>
         Shortcuts are loaded dynamically from your active keymap, so whatever OS
         or custom keymap you use, you always practice the right binding.
@@ -18,50 +18,50 @@
 
         <!-- ── Tool Window ─────────────────────────────────────────── -->
         <toolWindow
-            id="ShortcutSensei"
-            displayName="ShortcutSensei"
+            id="LearnShortcuts"
+            displayName="LearnShortcuts"
             anchor="right"
             secondary="false"
-            factoryClass="dev.maxblack.shortcutsensei.ui.toolwindow.ShortcutSenseiToolWindowFactory"
-            icon="/icons/shortcut-sensei.svg"/>
+            factoryClass="dev.maxblack.learnshortcuts.ui.toolwindow.LearnShortcutsToolWindowFactory"
+            icon="/icons/learn-shortcuts.svg"/>
 
         <!-- ── Application-level Settings ────────────────────────── -->
         <applicationConfigurable
-            instance="dev.maxblack.shortcutsensei.ui.settings.SettingsConfigurable"
-            id="dev.maxblack.shortcutsensei.settings"
-            displayName="ShortcutSensei"
+            instance="dev.maxblack.learnshortcuts.ui.settings.SettingsConfigurable"
+            id="dev.maxblack.learnshortcuts.settings"
+            displayName="LearnShortcuts"
             parentId="tools"/>
 
         <!-- ── Persistent State Services ─────────────────────────── -->
         <applicationService
-            serviceImplementation="dev.maxblack.shortcutsensei.core.state.PluginState"/>
+            serviceImplementation="dev.maxblack.learnshortcuts.core.state.PluginState"/>
         <applicationService
-            serviceImplementation="dev.maxblack.shortcutsensei.core.state.StatisticsState"/>
+            serviceImplementation="dev.maxblack.learnshortcuts.core.state.StatisticsState"/>
 
         <!-- Project-scoped: holds per-project session manager instance -->
         <projectService
-            serviceImplementation="dev.maxblack.shortcutsensei.core.engine.SessionManagerService"/>
+            serviceImplementation="dev.maxblack.learnshortcuts.core.engine.SessionManagerService"/>
 
         <!-- ── Startup Activity ───────────────────────────────────── -->
         <postStartupActivity
-            implementation="dev.maxblack.shortcutsensei.ShortcutSenseiPlugin"/>
+            implementation="dev.maxblack.learnshortcuts.LearnShortcutsPlugin"/>
 
     </extensions>
 
     <actions>
         <action
-            id="ShortcutSensei.OpenPractice"
-            class="dev.maxblack.shortcutsensei.ui.actions.OpenPracticeAction"
-            text="Open ShortcutSensei"
-            description="Start or resume a ShortcutSensei practice session">
+            id="LearnShortcuts.OpenPractice"
+            class="dev.maxblack.learnshortcuts.ui.actions.OpenPracticeAction"
+            text="Open LearnShortcuts"
+            description="Start or resume a LearnShortcuts practice session">
             <add-to-group group-id="ToolsMenu" anchor="last"/>
         </action>
 
         <action
-            id="ShortcutSensei.ShowStatistics"
-            class="dev.maxblack.shortcutsensei.ui.actions.ShowStatisticsAction"
-            text="ShortcutSensei Statistics"
-            description="Show ShortcutSensei practice statistics">
+            id="LearnShortcuts.ShowStatistics"
+            class="dev.maxblack.learnshortcuts.ui.actions.ShowStatisticsAction"
+            text="LearnShortcuts Statistics"
+            description="Show LearnShortcuts practice statistics">
             <add-to-group group-id="ToolsMenu" anchor="last"/>
         </action>
     </actions>

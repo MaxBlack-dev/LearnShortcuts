@@ -34,12 +34,12 @@ dependencies {
 
 intellijPlatform {
     pluginConfiguration {
-        name = "ShortcutSensei"
+        name = "LearnShortcuts"
         version = "0.1.0"
 
         description = """
             <![CDATA[
-            <b>ShortcutSensei</b> — Master every IntelliJ IDEA keyboard shortcut through
+            <b>LearnShortcuts</b> — Master every IntelliJ IDEA keyboard shortcut through
             interactive, gamified practice sessions.<br/><br/>
             <ul>
               <li>🎯 Practice all IntelliJ IDEA shortcuts <b>in context</b> — see what each one actually does</li>
