@@ -65,4 +65,19 @@ data class Shortcut(
      * Used by context providers to set up the right code snippet.
      */
     val codeCompletionVariant: String? = null,
+
+    /**
+     * A short, inline code snippet shown in the practice panel to illustrate
+     * what the shortcut does in practice.
+     *
+     * Use plain text — line breaks are preserved with <br> in the rendered HTML.
+     * Keep it to ≤ 6 lines so it fits neatly under the description.
+     *
+     * Examples:
+     *   "String s = \"hello|\"  →  String s = \"hello\";"
+     *   "items.stream()\n  .filter(x -> x > 0|\n  .collect(...)  →  ...collect(...);"
+     *
+     * Null = no snippet shown (for shortcuts that are hard to illustrate inline).
+     */
+    val contextSnippet: String? = null,
 )

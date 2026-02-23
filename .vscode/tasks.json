@@ -1,0 +1,12 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run Plugin (runIde)",
+			"type": "shell",
+			"command": "./gradlew runIde",
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}

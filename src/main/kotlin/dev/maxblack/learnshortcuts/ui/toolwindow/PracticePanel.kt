@@ -5,6 +5,7 @@ import com.intellij.ui.JBColor
 import com.intellij.ui.components.JBLabel
 import com.intellij.ui.components.JBPanel
 import com.intellij.ui.components.JBScrollPane
+import com.intellij.ui.components.JBTextArea
 import com.intellij.util.ui.JBUI
 import dev.maxblack.learnshortcuts.core.engine.SessionListener
 import dev.maxblack.learnshortcuts.core.engine.SessionManager
@@ -86,6 +87,24 @@ class PracticePanel(private val project: Project) : JBPanel<PracticePanel>(Borde
         addActionListener { onStartSession() }
     }
 
+    /**
+     * Inline code snippet that illustrates what the shortcut does.
+     * Rendered in a monospaced read-only text area so it looks like code.
+     */
+    private val snippetArea = JBTextArea().apply {
+        isEditable = false
+        isOpaque = true
+        lineWrap = false
+        font = java.awt.Font(java.awt.Font.MONOSPACED, java.awt.Font.PLAIN, 12)
+        background = JBColor(0xF5F5F5, 0x2B2B2B)
+        foreground = JBColor(0x1A1A1A, 0xCCCCCC)
+        border = JBUI.Borders.compound(
+            JBUI.Borders.empty(6, 8),
+            JBUI.Borders.customLine(JBColor(0xCCCCCC, 0x555555)),
+        )
+        isVisible = false
+    }
+
     private val feedbackLabel = JBLabel(" ").apply {
         font = font.deriveFont(Font.BOLD, 14f)
         horizontalAlignment = SwingConstants.CENTER
@@ -122,13 +141,18 @@ class PracticePanel(private val project: Project) : JBPanel<PracticePanel>(Borde
             }
             gc.gridy = 0; add(actionLabel, gc)
             gc.gridy = 1; add(descriptionLabel, gc)
-            gc.gridy = 2; add(feedbackLabel, gc)
-            gc.gridy = 3; add(revealedShortcutLabel, gc)
+            gc.gridy = 2; add(JBScrollPane(snippetArea).also {
+                it.border = JBUI.Borders.empty(4, 8)
+                it.isOpaque = false
+                it.viewport.isOpaque = false
+            }, gc)
+            gc.gridy = 3; add(feedbackLabel, gc)
+            gc.gridy = 4; add(revealedShortcutLabel, gc)
 
             val btnPanel = JBPanel<JBPanel<*>>().apply {
                 add(revealButton)
             }
-            gc.gridy = 4; add(btnPanel, gc)
+            gc.gridy = 5; add(btnPanel, gc)
         }
 
         val bottom = JBPanel<JBPanel<*>>().apply {
@@ -195,10 +219,20 @@ class PracticePanel(private val project: Project) : JBPanel<PracticePanel>(Borde
         if (shortcut == null) {
             actionLabel.text = "–"
             descriptionLabel.text = " "
+            snippetArea.isVisible = false
             return
         }
         actionLabel.text = shortcut.displayName
         descriptionLabel.text = "<html><center>${shortcut.description}</center></html>"
+
+        // Inline code snippet
+        val snippet = shortcut.contextSnippet
+        if (snippet != null) {
+            snippetArea.text = snippet
+            snippetArea.isVisible = true
+        } else {
+            snippetArea.isVisible = false
+        }
 
         if (!shortcut.canDemonstrate) {
             showFeedback(

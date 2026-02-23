@@ -113,6 +113,7 @@ object BuiltinShortcutDefinitions {
             category = ShortcutCategory.CODE_COMPLETION,
             popularityRank = 1,
             contextType = ContextType.EDITOR_JAVA,
+            contextSnippet = "list.add(|)  →  popup: add(E e), addAll(...), ...",
         ),
         Shortcut(
             id = "smart-completion",
@@ -122,6 +123,7 @@ object BuiltinShortcutDefinitions {
             category = ShortcutCategory.CODE_COMPLETION,
             popularityRank = 5,
             contextType = ContextType.EDITOR_JAVA,
+            contextSnippet = "List<String> list = |\n→ only suggests: new ArrayList<>(), List.of(), ...",
         ),
         Shortcut(
             id = "complete-statement-semicolon",
@@ -134,6 +136,7 @@ object BuiltinShortcutDefinitions {
             groupId = "complete-statement-variants",
             groupPosition = 0,
             codeCompletionVariant = "SEMICOLON",
+            contextSnippet = "String s = \"hello|\"\n→  String s = \"hello\";",
         ),
         Shortcut(
             id = "complete-statement-paren",
@@ -146,6 +149,7 @@ object BuiltinShortcutDefinitions {
             groupId = "complete-statement-variants",
             groupPosition = 1,
             codeCompletionVariant = "PARENTHESIS",
+            contextSnippet = "System.out.println(\"hello|\"\n→  System.out.println(\"hello\");",
         ),
         Shortcut(
             id = "complete-statement-return",
@@ -158,6 +162,7 @@ object BuiltinShortcutDefinitions {
             groupId = "complete-statement-variants",
             groupPosition = 2,
             codeCompletionVariant = "RETURN",
+            contextSnippet = "public String name() {\n    \"max|\"\n→  return \"max\";\n}",
         ),
         Shortcut(
             id = "cyclic-expand-word",
@@ -167,6 +172,7 @@ object BuiltinShortcutDefinitions {
             category = ShortcutCategory.CODE_COMPLETION,
             popularityRank = 55,
             contextType = ContextType.EDITOR_ANY_CODE,
+            contextSnippet = "// File contains: firstName, firstItem, firstRun\nfir|  →  firstName  →  firstItem  →  firstRun  →  ...",
         ),
         Shortcut(
             id = "postfix-completion",
@@ -190,6 +196,7 @@ object BuiltinShortcutDefinitions {
             category = ShortcutCategory.NAVIGATION,
             popularityRank = 2,
             contextType = ContextType.ANY,
+            contextSnippet = "Type: \"SVM\"  →  finds  StringValueMapper, SomeViewModel, ...",
         ),
         Shortcut(
             id = "goto-file",
@@ -198,6 +205,7 @@ object BuiltinShortcutDefinitions {
             description = "Opens a search dialog to navigate to any file in the project by name.",
             category = ShortcutCategory.NAVIGATION,
             popularityRank = 3,
+            contextSnippet = "Type: \"build.gradle\"  →  jumps to the file instantly",
             contextType = ContextType.ANY,
         ),
         Shortcut(
@@ -208,6 +216,7 @@ object BuiltinShortcutDefinitions {
             category = ShortcutCategory.NAVIGATION,
             popularityRank = 4,
             contextType = ContextType.ANY,
+            contextSnippet = "Type: \"getName\"  →  finds all getName() methods in every class",
         ),
         Shortcut(
             id = "goto-declaration",
@@ -217,6 +226,7 @@ object BuiltinShortcutDefinitions {
             category = ShortcutCategory.NAVIGATION,
             popularityRank = 6,
             contextType = ContextType.EDITOR_JAVA,
+            contextSnippet = "someService.|doWork()  →  jumps to doWork() definition\ndoWork() declaration  →  shows all call sites",
         ),
         Shortcut(
             id = "goto-implementation",
@@ -226,6 +236,7 @@ object BuiltinShortcutDefinitions {
             category = ShortcutCategory.NAVIGATION,
             popularityRank = 12,
             contextType = ContextType.EDITOR_JAVA,
+            contextSnippet = "interface |Runnable { run(); }\n→  shows: Thread, TimerTask, FutureTask, ...",
         ),
         Shortcut(
             id = "goto-super",
@@ -253,6 +264,7 @@ object BuiltinShortcutDefinitions {
             category = ShortcutCategory.NAVIGATION,
             popularityRank = 15,
             contextType = ContextType.ANY,
+            contextSnippet = "UserService.java:42  →  (Cmd+click into getUser())\n→  Back: returns to UserService.java:42",
         ),
         Shortcut(
             id = "forward",
@@ -262,6 +274,7 @@ object BuiltinShortcutDefinitions {
             category = ShortcutCategory.NAVIGATION,
             popularityRank = 16,
             contextType = ContextType.ANY,
+            contextSnippet = "After Back: use Forward to return to getUser() definition",
         ),
         Shortcut(
             id = "find-usages",
@@ -271,6 +284,7 @@ object BuiltinShortcutDefinitions {
             category = ShortcutCategory.NAVIGATION,
             popularityRank = 7,
             contextType = ContextType.EDITOR_JAVA,
+            contextSnippet = "class |UserService { ... }\n→  Find Usages panel shows:\n   OrderService.java:12\n   AuthFilter.java:34",
         ),
         Shortcut(
             id = "find-next",
@@ -304,6 +318,7 @@ object BuiltinShortcutDefinitions {
             contextType = ContextType.EDITOR_WITH_ERRORS,
             groupId = "navigate-errors",
             groupPosition = 0,
+            contextSnippet = "⚠ line 5: missing ';'  ←  caret jumps here\n⚠ line 12: undefined symbol  ←  then here",
         ),
         Shortcut(
             id = "goto-prev-error",
@@ -315,6 +330,7 @@ object BuiltinShortcutDefinitions {
             contextType = ContextType.EDITOR_WITH_ERRORS,
             groupId = "navigate-errors",
             groupPosition = 1,
+            contextSnippet = "⚠ line 12 (current)  →  Previous  →  ⚠ line 5",
         ),
         Shortcut(
             id = "show-error-description",
@@ -326,6 +342,7 @@ object BuiltinShortcutDefinitions {
             contextType = ContextType.EDITOR_WITH_ERRORS,
             groupId = "navigate-errors",
             groupPosition = 2,
+            contextSnippet = "int x = \"oops|\"   ⚠\n→  tooltip: \"Incompatible types: String cannot be\n   converted to int\"",
         ),
         Shortcut(
             id = "recent-files",
@@ -335,6 +352,7 @@ object BuiltinShortcutDefinitions {
             category = ShortcutCategory.NAVIGATION,
             popularityRank = 14,
             contextType = ContextType.ANY,
+            contextSnippet = "Popup lists: UserService.java, build.gradle,\n  OrderController.java, ...  — type to filter",
         ),
         Shortcut(
             id = "recent-locations",
@@ -371,6 +389,7 @@ object BuiltinShortcutDefinitions {
             category = ShortcutCategory.NAVIGATION,
             popularityRank = 19,
             contextType = ContextType.EDITOR_JAVA,
+            contextSnippet = "UserService.java popup:\n  + name: String\n  + getName(): String\n  + save(User): void",
         ),
         Shortcut(
             id = "select-in",
@@ -396,6 +415,7 @@ object BuiltinShortcutDefinitions {
             contextType = ContextType.EDITOR_ANY_CODE,
             groupId = "extend-shrink-selection",
             groupPosition = 0,
+            contextSnippet = "return |items.stream()...\n1st press → [items] selected",
         ),
         Shortcut(
             id = "extend-selection-2",
@@ -407,6 +427,7 @@ object BuiltinShortcutDefinitions {
             contextType = ContextType.EDITOR_ANY_CODE,
             groupId = "extend-shrink-selection",
             groupPosition = 1,
+            contextSnippet = "return |items.stream()...\n2nd press → [items.stream()] selected",
         ),
         Shortcut(
             id = "extend-selection-3",
@@ -418,6 +439,7 @@ object BuiltinShortcutDefinitions {
             contextType = ContextType.EDITOR_ANY_CODE,
             groupId = "extend-shrink-selection",
             groupPosition = 2,
+            contextSnippet = "return |items.stream()...\n3rd press → [return items.stream()...;] selected",
         ),
         Shortcut(
             id = "shrink-selection-1",
@@ -429,6 +451,7 @@ object BuiltinShortcutDefinitions {
             contextType = ContextType.EDITOR_WITH_SELECTION,
             groupId = "extend-shrink-selection",
             groupPosition = 3,
+            contextSnippet = "[return items.stream()...;] selected\n→  shrinks to [items.stream()...]",
         ),
         Shortcut(
             id = "shrink-selection-2",
@@ -440,6 +463,7 @@ object BuiltinShortcutDefinitions {
             contextType = ContextType.EDITOR_WITH_SELECTION,
             groupId = "extend-shrink-selection",
             groupPosition = 4,
+            contextSnippet = "[items.stream()...] selected\n→  shrinks back to [items]",
         ),
         Shortcut(
             id = "duplicate-line",
@@ -449,6 +473,7 @@ object BuiltinShortcutDefinitions {
             category = ShortcutCategory.EDITING,
             popularityRank = 17,
             contextType = ContextType.EDITOR_ANY_CODE,
+            contextSnippet = "System.out.println(\"hello\");  ← caret here\n→  System.out.println(\"hello\");\n   System.out.println(\"hello\");  ← copy below",
         ),
         Shortcut(
             id = "delete-line",
@@ -458,6 +483,7 @@ object BuiltinShortcutDefinitions {
             category = ShortcutCategory.EDITING,
             popularityRank = 19,
             contextType = ContextType.EDITOR_ANY_CODE,
+            contextSnippet = "int x = 1;\nint y = 2;  ← caret here → deleted\nint z = 3;\n→  int x = 1;\n   int z = 3;",
         ),
         Shortcut(
             id = "move-line-up",
@@ -467,6 +493,7 @@ object BuiltinShortcutDefinitions {
             category = ShortcutCategory.EDITING,
             popularityRank = 23,
             contextType = ContextType.EDITOR_ANY_CODE,
+            contextSnippet = "int a = 1;\nint b = 2;  ← caret, press Move Up\n→  int b = 2;\n   int a = 1;",
         ),
         Shortcut(
             id = "move-line-down",
@@ -476,6 +503,7 @@ object BuiltinShortcutDefinitions {
             category = ShortcutCategory.EDITING,
             popularityRank = 24,
             contextType = ContextType.EDITOR_ANY_CODE,
+            contextSnippet = "int a = 1;  ← caret, press Move Down\nint b = 2;\n→  int b = 2;\n   int a = 1;",
         ),
         Shortcut(
             id = "comment-line",
@@ -485,6 +513,7 @@ object BuiltinShortcutDefinitions {
             category = ShortcutCategory.EDITING,
             popularityRank = 28,
             contextType = ContextType.EDITOR_ANY_CODE,
+            contextSnippet = "System.out.println(\"hi\");  ← press\n→  // System.out.println(\"hi\");\n   (press again to uncomment)",
         ),
         Shortcut(
             id = "comment-block",
@@ -503,6 +532,7 @@ object BuiltinShortcutDefinitions {
             category = ShortcutCategory.EDITING,
             popularityRank = 29,
             contextType = ContextType.EDITOR_ANY_CODE,
+            contextSnippet = "if(x){doSomething(  );}\n→  if (x) {\n       doSomething();\n   }",
         ),
         Shortcut(
             id = "optimize-imports",
@@ -521,6 +551,7 @@ object BuiltinShortcutDefinitions {
             category = ShortcutCategory.EDITING,
             popularityRank = 31,
             contextType = ContextType.EDITOR_WITH_ERRORS,
+            contextSnippet = "💡 String s = 123|;   ⚠\n→  menu: 'Cast to String', 'Change type to int', ...",
         ),
         Shortcut(
             id = "surround-with",
@@ -530,6 +561,7 @@ object BuiltinShortcutDefinitions {
             category = ShortcutCategory.EDITING,
             popularityRank = 36,
             contextType = ContextType.EDITOR_WITH_SELECTION,
+            contextSnippet = "[riskyCall()]  selected\n→  choose 'try / catch'\n→  try { riskyCall(); }\n   catch (Exception e) { ... }",
         ),
         Shortcut(
             id = "unwrap-remove",
@@ -548,6 +580,7 @@ object BuiltinShortcutDefinitions {
             category = ShortcutCategory.EDITING,
             popularityRank = 37,
             contextType = ContextType.EDITOR_JAVA,
+            contextSnippet = "class User { String name; int age; }\n→  Generate → 'Getters and Setters'\n→  getName(), setName(), getAge(), setAge() inserted",
         ),
         Shortcut(
             id = "override-methods",
@@ -575,6 +608,7 @@ object BuiltinShortcutDefinitions {
             category = ShortcutCategory.EDITING,
             popularityRank = 50,
             contextType = ContextType.EDITOR_ANY_CODE,
+            contextSnippet = "String s = \"hello\"\n        + \" world\";  ← press Join\n→  String s = \"hello\" + \" world\";",
         ),
         Shortcut(
             id = "toggle-case",
@@ -593,6 +627,7 @@ object BuiltinShortcutDefinitions {
             category = ShortcutCategory.EDITING,
             popularityRank = 42,
             contextType = ContextType.EDITOR_JAVA,
+            contextSnippet = "String.format(|)\n→  tooltip: format(String format, Object... args)",
         ),
         Shortcut(
             id = "quick-documentation",
@@ -602,6 +637,7 @@ object BuiltinShortcutDefinitions {
             category = ShortcutCategory.EDITING,
             popularityRank = 43,
             contextType = ContextType.EDITOR_JAVA,
+            contextSnippet = "Collections.|sort(list)\n→  popup: \"Sorts the specified list into ascending\n   order, according to the natural ordering...\"",
         ),
         Shortcut(
             id = "quick-definition",
@@ -627,6 +663,7 @@ object BuiltinShortcutDefinitions {
             contextType = ContextType.EDITOR_ANY_CODE,
             groupId = "multi-caret",
             groupPosition = 0,
+            contextSnippet = "String |name = \"a\";  ← caret\nString name = \"b\";\n→  String |name = \"a\";  ← caret\n   String |name = \"b\";  ← new caret",
         ),
         Shortcut(
             id = "clone-caret-above",
@@ -638,6 +675,7 @@ object BuiltinShortcutDefinitions {
             contextType = ContextType.EDITOR_ANY_CODE,
             groupId = "multi-caret",
             groupPosition = 1,
+            contextSnippet = "String name = \"a\";\nString |name = \"b\";  ← caret\n→  String |name = \"a\";  ← new caret\n   String |name = \"b\";  ← caret",
         ),
         Shortcut(
             id = "add-selection-next-occurrence",
@@ -649,6 +687,7 @@ object BuiltinShortcutDefinitions {
             contextType = ContextType.EDITOR_ANY_CODE,
             groupId = "multi-caret",
             groupPosition = 2,
+            contextSnippet = "[name] = \"a\";  selected → press once\n[name] = \"b\";  ← also selected\n[name] = \"c\";  ← press again",
         ),
         Shortcut(
             id = "select-all-occurrences",
@@ -660,6 +699,7 @@ object BuiltinShortcutDefinitions {
             contextType = ContextType.EDITOR_ANY_CODE,
             groupId = "multi-caret",
             groupPosition = 3,
+            contextSnippet = "[name] = \"a\";\n[name] = \"b\";  →  all 3 [name] selected at once\n[name] = \"c\";",
         ),
 
         // ════════════════════════════════════════════════════════════════════
@@ -676,6 +716,7 @@ object BuiltinShortcutDefinitions {
             contextType = ContextType.EDITOR_JAVA,
             groupId = "live-rename",
             groupPosition = 0,
+            contextSnippet = "class |UserService { ... }\n→  type 'AccountService'\n→  all 12 usages renamed automatically",
         ),
         Shortcut(
             id = "extract-variable",
@@ -687,6 +728,7 @@ object BuiltinShortcutDefinitions {
             contextType = ContextType.EDITOR_WITH_SELECTION,
             groupId = "extract-refactorings",
             groupPosition = 0,
+            contextSnippet = "return [user.getName().trim()];  selected\n→  String name = user.getName().trim();\n   return name;",
         ),
         Shortcut(
             id = "extract-method",
@@ -698,6 +740,7 @@ object BuiltinShortcutDefinitions {
             contextType = ContextType.EDITOR_WITH_SELECTION,
             groupId = "extract-refactorings",
             groupPosition = 1,
+            contextSnippet = "[log.info(\"start\");\n doWork();\n log.info(\"end\");]  selected\n→  private void executeAndLog() { ... }",
         ),
         Shortcut(
             id = "extract-field",
@@ -766,6 +809,7 @@ object BuiltinShortcutDefinitions {
             category = ShortcutCategory.SEARCH_REPLACE,
             popularityRank = 65,
             contextType = ContextType.ANY,
+            contextSnippet = "Type: \"font size\"\n→  finds: Editor › Font Size setting\n   and: all class/file matches",
         ),
         Shortcut(
             id = "find-in-file",
@@ -775,6 +819,7 @@ object BuiltinShortcutDefinitions {
             category = ShortcutCategory.SEARCH_REPLACE,
             popularityRank = 66,
             contextType = ContextType.EDITOR_ANY_CODE,
+            contextSnippet = "▶ Find toolbar opens at bottom of editor\n  [  name  ]  4 matches  ↑ ↓",
         ),
         Shortcut(
             id = "find-in-files",
@@ -784,6 +829,7 @@ object BuiltinShortcutDefinitions {
             category = ShortcutCategory.SEARCH_REPLACE,
             popularityRank = 67,
             contextType = ContextType.ANY,
+            contextSnippet = "Search: \"TODO\"  In: Whole project\n→  34 matches in 12 files",
         ),
         Shortcut(
             id = "replace-in-file",
@@ -810,6 +856,7 @@ object BuiltinShortcutDefinitions {
 
         Shortcut(
             id = "collapse-block",
+            contextSnippet = "public void veryLongMethod() {\n    // ... 50 lines ...  → collapses to:\npublic void veryLongMethod() { ... }",
             actionId = "CollapseRegion",
             displayName = "Collapse Code Block",
             description = "Collapses the code block at the caret position into a single line.",
@@ -821,6 +868,7 @@ object BuiltinShortcutDefinitions {
         ),
         Shortcut(
             id = "expand-block",
+            contextSnippet = "public void veryLongMethod() { ... }  → expand\n→  shows all 50 lines again",
             actionId = "ExpandRegion",
             displayName = "Expand Code Block",
             description = "Expands a collapsed code block at the caret position.",
@@ -832,6 +880,7 @@ object BuiltinShortcutDefinitions {
         ),
         Shortcut(
             id = "collapse-all",
+            contextSnippet = "All methods/classes in the file\n→  collapse to one-liner stubs at once",
             actionId = "CollapseAllRegions",
             displayName = "Collapse All",
             description = "Collapses every foldable region in the current file.",
@@ -843,6 +892,7 @@ object BuiltinShortcutDefinitions {
         ),
         Shortcut(
             id = "expand-all",
+            contextSnippet = "All stubs { ... } expanded\n→  full file content visible again",
             actionId = "ExpandAllRegions",
             displayName = "Expand All",
             description = "Expands every collapsed region in the current file.",
