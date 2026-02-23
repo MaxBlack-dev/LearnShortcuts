@@ -38,24 +38,21 @@ intellijPlatform {
         version = "0.1.0"
 
         description = """
-            <![CDATA[
             <b>LearnShortcuts</b> — Master every IntelliJ IDEA keyboard shortcut through
             interactive, gamified practice sessions.<br/><br/>
             <ul>
-              <li>🎯 Practice all IntelliJ IDEA shortcuts <b>in context</b> — see what each one actually does</li>
-              <li>📊 Track progress with detailed <b>statistics</b> across sessions</li>
-              <li>🔀 <b>Popularity-ordered</b> or <b>random</b> practice modes</li>
-              <li>👁 <b>Reveal</b> button — peek the answer without losing your streak</li>
-              <li>🔗 <b>Grouped shortcut sequences</b> (e.g. Extend → Shrink selection)</li>
-              <li>💻 Works on <b>Mac, Linux, Windows</b>, and <b>Chrome OS</b></li>
+              <li>Practice all IntelliJ IDEA shortcuts in context — see what each one actually does</li>
+              <li>Track progress with detailed statistics across sessions</li>
+              <li>Popularity-ordered or random practice modes</li>
+              <li>Reveal button — peek the answer, retry later</li>
+              <li>Grouped shortcut sequences (e.g. Extend then Shrink selection)</li>
+              <li>Works on Mac, Linux, and Windows</li>
             </ul>
             Shortcuts are loaded dynamically from your current active keymap —
             so every practised binding is exactly the one bound on your machine.
-            ]]>
         """.trimIndent()
 
         changeNotes = """
-            <![CDATA[
             <b>0.1.0</b> — Initial release<br/>
             <ul>
               <li>Core practice engine with session management</li>
@@ -65,7 +62,6 @@ intellijPlatform {
               <li>Statistics tracking across sessions</li>
               <li>Settings: popularity / random / category order</li>
             </ul>
-            ]]>
         """.trimIndent()
 
         ideaVersion {
