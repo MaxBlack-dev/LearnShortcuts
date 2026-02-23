@@ -34,6 +34,13 @@ class PluginState : PersistentStateComponent<PluginState> {
     /** Whether to play a success sound on correct input. */
     var enableSoundFeedback: Boolean = false
 
+    /**
+     * When true, every keyboard shortcut from the active keymap is included in
+     * the practice queue (auto-discovered beyond the curated list).
+     * When false, only the ~70–100 hand-picked curated shortcuts are used.
+     */
+    var includeAllKeymapShortcuts: Boolean = true
+
     override fun getState(): PluginState = this
 
     override fun loadState(state: PluginState) {

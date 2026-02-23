@@ -38,6 +38,15 @@ class SettingsPanel : JBPanel<SettingsPanel>(GridBagLayout()) {
 
     private val soundCheck = JBCheckBox("Play sound on correct input", false)
 
+    private val includeAllKeymapCheck = JBCheckBox(
+        "Include all shortcuts from the active keymap (auto-discover)",
+        true,
+    ).apply {
+        toolTipText = "When enabled, every bound action in your current keymap is added to the " +
+            "practice queue, beyond the hand-picked curated set. " +
+            "Auto-discovered shortcuts have no guided demo context."
+    }
+
     // ── Init ──────────────────────────────────────────────────────────────────
 
     init {
@@ -49,6 +58,7 @@ class SettingsPanel : JBPanel<SettingsPanel>(GridBagLayout()) {
         setAutoRevealSeconds(state.autoRevealAfterSeconds)
         setIncludeNonDemonstrable(state.includeNonDemonstrableShortcuts)
         setSoundEnabled(state.enableSoundFeedback)
+        setIncludeAllKeymap(state.includeAllKeymapShortcuts)
     }
 
     private fun buildLayout() {
@@ -81,6 +91,9 @@ class SettingsPanel : JBPanel<SettingsPanel>(GridBagLayout()) {
         gc.gridy++
         add(soundCheck, gc)
 
+        gc.gridy++
+        add(includeAllKeymapCheck, gc)
+
         // Filler
         gc.gridy++
         gc.weighty = 1.0
@@ -105,4 +118,7 @@ class SettingsPanel : JBPanel<SettingsPanel>(GridBagLayout()) {
 
     fun isSoundEnabled(): Boolean = soundCheck.isSelected
     fun setSoundEnabled(v: Boolean) { soundCheck.isSelected = v }
+
+    fun isIncludeAllKeymap(): Boolean = includeAllKeymapCheck.isSelected
+    fun setIncludeAllKeymap(v: Boolean) { includeAllKeymapCheck.isSelected = v }
 }
