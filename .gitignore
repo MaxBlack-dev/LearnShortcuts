@@ -31,3 +31,6 @@ certificates/
 
 # IntelliJ Platform plugin signing output
 *.zip.asc
+
+# IntelliJ Platform Gradle Plugin cache
+.intellijPlatform/
